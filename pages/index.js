@@ -1,21 +1,9 @@
 import Head from "next/head";
-// import { SendButton, UploadButton } from "../components";s
-import { useForm } from "react-hook-form";
+import { Form } from "../components";
 
 import styles from "../styles/Home.module.scss";
 
 export default function Home() {
-  const {
-    register,
-    handleSubmit,
-    watch,
-    formState: { errors },
-  } = useForm();
-
-  const onSubmit = (data) => console.log(data);
-
-  console.log(watch("example"));
-
   return (
     <div className={styles.container}>
       <Head>
@@ -32,17 +20,8 @@ export default function Home() {
           Compilador de Posts <br />
           para Prata e Arte
         </h1>
-
+        <Form />
         <p className={styles.description}>Adicione o CSV e receba os posts</p>
-        <form id="csvForm" onSubmit={handleSubmit(onSubmit)}>
-          <input defaultValue="test" {...register("example")} />
-          <input {...register("exampleRequired", { required: true })} />
-          {errors.exampleRequired && <span>This field is required</span>}
-          <input type="submit" />
-
-          {/* <UploadButton />
-          <SendButton /> */}
-        </form>
       </main>
     </div>
   );
