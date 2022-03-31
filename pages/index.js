@@ -1,14 +1,20 @@
 import Head from "next/head";
-import Image from "next/image";
-import { styled } from "@mui/material/styles";
-import Button from "@mui/material/Button";
-import IconButton from "@mui/material/IconButton";
+// import { SendButton, UploadButton } from "../components";s
+import { useForm } from "react-hook-form";
+
 import styles from "../styles/Home.module.scss";
 
 export default function Home() {
-  const Input = styled("input")({
-    display: "none",
-  });
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm();
+
+  const onSubmit = (data) => console.log(data);
+
+  console.log(watch("example"));
 
   return (
     <div className={styles.container}>
@@ -28,26 +34,15 @@ export default function Home() {
         </h1>
 
         <p className={styles.description}>Adicione o CSV e receba os posts</p>
+        <form id="csvForm" onSubmit={handleSubmit(onSubmit)}>
+          <input defaultValue="test" {...register("example")} />
+          <input {...register("exampleRequired", { required: true })} />
+          {errors.exampleRequired && <span>This field is required</span>}
+          <input type="submit" />
 
-        <label htmlFor="contained-button-file">
-          <Input
-            accept=".csv"
-            id="contained-button-file"
-            multiple
-            type="file"
-          />
-          <Button variant="contained" component="span">
-            Upload
-          </Button>
-        </label>
-        <label htmlFor="icon-button-file">
-          <Input accept=".csv" id="icon-button-file" type="file" />
-          <IconButton
-            color="primary"
-            aria-label="upload picture"
-            component="span"
-          ></IconButton>
-        </label>
+          {/* <UploadButton />
+          <SendButton /> */}
+        </form>
       </main>
     </div>
   );
