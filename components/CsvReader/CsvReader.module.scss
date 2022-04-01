@@ -1,0 +1,92 @@
+$breakpoint-tablet: 768px;
+
+.csvReader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 5px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  @media (min-width: $breakpoint-tablet) {
+    flex-direction: row;
+  }
+}
+
+.browseFile {
+  padding: 10px 15px;
+  width: 160px;
+  height: 40px;
+  background-color: rgb(60, 138, 255);
+  border-radius: 5px;
+  border: 1px solid rgb(254, 254, 254);
+  color: white;
+
+  &:hover {
+    background-color: #57b3ff;
+    cursor: pointer;
+  }
+  &:active {
+    background-color: rgb(0, 131, 238);
+  }
+}
+
+.acceptedFile {
+  font-family: Roboto, "Helvetica Neue";
+  border: 2px solid #57b3ff;
+  padding: 10px;
+  color: gray;
+  border-radius: 5px;
+  width: 80%;
+  min-height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 10px;
+}
+
+.progressBarBackgroundColor {
+  background-color: darkblue;
+}
+
+.remove {
+  display: flex;
+  width: 160px;
+  height: 38px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 9px;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: 1px solid red;
+  color: red;
+  font-size: 18px;
+  background-color: transparent;
+
+  &:hover {
+    cursor: pointer;
+    color: white;
+    border-color: rgb(216, 176, 183);
+    background-color: rgb(216, 176, 183);
+  }
+  &:active {
+    color: white;
+    border-color: rgb(160, 0, 0);
+    background-color: rgb(162, 0, 0);
+  }
+
+  @media (min-width: $breakpoint-tablet) {
+    margin: 0 5px;
+  }
+}
+.removeText {
+  font-size: 14px;
+  margin: 0 5px;
+}
