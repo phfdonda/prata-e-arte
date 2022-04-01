@@ -1,3 +1,5 @@
+$breakpoint-tablet: 768px;
+
 .csvReader {
   display: flex;
   justify-content: center;
@@ -10,14 +12,19 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: row;
+  flex-direction: column;
+  @media (min-width: $breakpoint-tablet) {
+    flex-direction: row;
+  }
 }
 
 .browseFile {
   padding: 10px 15px;
+  width: 160px;
+  height: 40px;
   background-color: rgb(60, 138, 255);
   border-radius: 5px;
-  border: 1px solid white;
+  border: 1px solid rgb(254, 254, 254);
   color: white;
 
   &:hover {
@@ -32,10 +39,11 @@
 .acceptedFile {
   font-family: Roboto, "Helvetica Neue";
   border: 2px solid #57b3ff;
+  padding: 10px;
   color: gray;
   border-radius: 5px;
   width: 80%;
-  height: 50px;
+  min-height: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -49,11 +57,13 @@
 
 .remove {
   display: flex;
+  width: 160px;
+  height: 38px;
   justify-content: center;
   align-items: center;
   text-align: center;
   padding: 9px;
-  margin-left: 5px;
+  margin: 10px 0;
   border-radius: 5px;
   border: 1px solid red;
   color: red;
@@ -70,6 +80,10 @@
     color: white;
     border-color: rgb(160, 0, 0);
     background-color: rgb(162, 0, 0);
+  }
+
+  @media (min-width: $breakpoint-tablet) {
+    margin: 0 5px;
   }
 }
 .removeText {
