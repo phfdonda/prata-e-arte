@@ -1,4 +1,5 @@
 import Head from "next/head";
+import CSVReader from "../components/CsvReader/CsvReader";
 
 import styles from "../styles/Home.module.scss";
 
@@ -20,6 +21,7 @@ export default function Home() {
           para Prata e Arte
         </h1>
         <p className={styles.description}>Adicione o CSV e receba os posts</p>
+        <CSVReader></CSVReader>
       </main>
     </div>
   );
