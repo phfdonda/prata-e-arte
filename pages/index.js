@@ -1,5 +1,4 @@
 import Head from "next/head";
-import { Form } from "../components";
 
 import styles from "../styles/Home.module.scss";
 
@@ -20,7 +19,6 @@ export default function Home() {
           Compilador de Posts <br />
           para Prata e Arte
         </h1>
-        <Form />
         <p className={styles.description}>Adicione o CSV e receba os posts</p>
       </main>
     </div>
