@@ -13,6 +13,9 @@ export default function CSVReader() {
         console.log(results);
         console.log("---------------------------");
       }}
+      config={{
+        header: true,
+      }}
     >
       {({ getRootProps, acceptedFile, ProgressBar, getRemoveFileProps }) => (
         <>
