@@ -1,4 +1,5 @@
 import { useCSVReader } from "react-papaparse";
+import textCompiler from "../../utils/textCompiler";
 import styles from "./CsvReader.module.scss";
 import { MdOutlineDeleteForever as Trash } from "react-icons/md";
 import { MdOutlineUpload as Upload } from "react-icons/md";
@@ -10,7 +11,7 @@ export default function CSVReader() {
     <CSVReader
       onUploadAccepted={(results) => {
         console.log("---------------------------");
-        console.log(results);
+        console.log(textCompiler(results));
         console.log("---------------------------");
       }}
       config={{
