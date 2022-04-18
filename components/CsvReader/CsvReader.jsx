@@ -12,8 +12,10 @@ export default function CSVReader() {
       onUploadAccepted={(results) => {
         console.log("---------------------------");
         console.log(textCompiler(results));
-
         console.log("---------------------------");
+      }}
+      config={{
+        header: true,
       }}
     >
       {({ getRootProps, acceptedFile, ProgressBar, getRemoveFileProps }) => (
